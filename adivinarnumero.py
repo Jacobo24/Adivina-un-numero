@@ -1,26 +1,52 @@
 def menu():
     print("Adivina un numero")
-    print("Nivel1\nNivel2\nNivel3\nNivel4")
-    nivel = input("Ingresa el nivel: ")
+    print("Primer nivel\nSegundo nivel\nTercer nivel\nCuarto nivel")
+    nivel = input("Ingresa el nivel que quieres: ")
     print(nivel)
-    if nivel== "Nivel1":
-        juego1(0,100)
-    elif nivel == "Nivel2":
-        juego1(0,1000)
-    elif nivel == "Nivel3":
-        juego1(0,10000)
-    elif nivel == "Nivel4":
-        juego1(0,100000)
+    if nivel == "Primer nivel":
+        juego1(0,100, na = numeroaleatorio (0,100))
+    elif nivel == "Segundo nivel":
+        juego1(0,1000, na = numeroaleatorio (0,1000))
+    elif nivel == "Tercer nivel":
+        juego1(0,10000, na = numeroaleatorio (0,10000))
+    elif nivel == "Cuarto nivel":
+        juego1(0,100000, na = numeroaleatorio (0,100000))
     else:
         return menu()
 def numeroaleatorio(minimo, maximo):
     import random
-    numeroaleatorio = random.randint(minimo, maximo)
-    return numeroaleatorio
-def juego1(minimo, maximo):
-    naleatorio = numeroaleatorio(minimo, maximo)
-    print(naleatorio)
-    numero = input()
+    na = random.randint(minimo, maximo)
+    return na
+def juego1(minimo, maximo, na):
+    numero = input("Ingresar un número entre", + str(minimo) + "y" + str(maximo) + ": ")
+    numero = int(numero)
+    print(numero)
+    while True:
+        if numero == na:
+            print("Ganaste")
+            ayuda+=1
+        elif numero > na:
+            print("El número es más pequeño")
+            ayuda+=1
+            if ayuda == 3:
+                cuestion(minimo, maximo,na)
+        elif numero < na:
+            print("El número es más grande")
+            ayuda+=1
+            if ayuda == 3:
+                cuestion(minimo, maximo, na)
+        else:
+            return juego1(minimo, maximo, na)
+def cuestion(minimo, maximo, na):
+    print("Necesitas ayuda?")
+    respuesta = input("Necesitas ayuda?")
+    if respuesta == "si":
+        print("El número está aproximadamente entre", minimo, "y", maximo)
+    elif respuesta == "no":
+        print("Te quedas sin ella")
+        return juego1(minimo, maximo, na)
+    else:
+        return cuestion(minimo, maximo, na)
 
 
 menu()

@@ -18,6 +18,7 @@ def numeroaleatorio(minimo, maximo):
     na = random.randint(minimo, maximo)
     return na
 def juego1(minimo, maximo, na):
+    ayuda = 0
     numero = input("Ingresar un número entre", + str(minimo) + "y" + str(maximo) + ": ")
     numero = int(numero)
     print(numero)
@@ -31,14 +32,14 @@ def juego1(minimo, maximo, na):
             ayuda+=1
             if ayuda == 3:
                 cuestion(minimo, maximo,na)
-            elif == 5
+            elif ayuda == 5:
                 maximointentos
         elif numero < na:
             print("El número es más grande")
             ayuda+=1
             if ayuda == 3:
                 cuestion(minimo, maximo, na)
-            elif == 5
+            elif ayuda == 5:
                 maximointentos
         else:
             return juego1(minimo, maximo, na)
@@ -61,7 +62,7 @@ def victoria(ayuda):
     print(pregunta2)
     if pregunta2 == "si":
         lista=[]
-        lista.append(nombre)
+        lista.append(Nombre)
         print(lista)
     else:
         print("Bien jugado")

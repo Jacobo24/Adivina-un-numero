@@ -25,16 +25,21 @@ def juego1(minimo, maximo, na):
         if numero == na:
             print("Ganaste")
             ayuda+=1
+            victoria(ayuda)
         elif numero > na:
             print("El número es más pequeño")
             ayuda+=1
             if ayuda == 3:
                 cuestion(minimo, maximo,na)
+            elif == 5
+                maximointentos
         elif numero < na:
             print("El número es más grande")
             ayuda+=1
             if ayuda == 3:
                 cuestion(minimo, maximo, na)
+            elif == 5
+                maximointentos
         else:
             return juego1(minimo, maximo, na)
 def cuestion(minimo, maximo, na):
@@ -44,9 +49,21 @@ def cuestion(minimo, maximo, na):
         print("El número está aproximadamente entre", minimo, "y", maximo)
     elif respuesta == "no":
         print("Te quedas sin ella")
-        return juego1(minimo, maximo, na)
+        return juego1()
     else:
-        return cuestion(minimo, maximo, na)
-
-
+        return cuestion()
+def maximointentos():
+    print("Perdiste")
+def victoria(ayuda):
+    print("Ganaste en", ayuda, "intentos")
+    Nombre = input("Ingrese su nombre: ")
+    pregunta2 = input ( Nombre, ", Desea volver a jugar?")
+    print(pregunta2)
+    if pregunta2 == "si":
+        lista=[]
+        lista.append(nombre)
+        print(lista)
+    else:
+        print("Bien jugado")
+        
 menu()
